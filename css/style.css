@@ -556,7 +556,6 @@ img {
   background-color: var(--dark-bg-color);
 
   border: 1px solid rgba(255, 255, 255, 0.3);
-  box-sizing: border-box;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
   border-radius: 4px;
 }
@@ -637,6 +636,7 @@ img {
   left: 50%;
   width: 528px;
   height: 581px;
+  padding: 40px;
 
   background-color: #fff;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
@@ -655,17 +655,10 @@ img {
 
   background: #ffffff;
   border: 1px solid rgba(0, 0, 0, 0.1);
-  box-sizing: border-box;
   border-radius: 50%;
   cursor: pointer;
 
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.btn-close:hover,
-.btn-close:focus {
-  background-color: var(--accent-color);
-  border: none;
 }
 
 .btn-icon {
@@ -681,7 +674,183 @@ img {
 
 .btn-close:hover .btn-icon,
 .btn-close:focus .btn-icon {
+  fill: var(--accent-color);
+}
+
+/* Форма в модалке */
+
+.modal-form {
+  display: flex;
+}
+
+.modal-title {
+  margin-bottom: 12px;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.15;
+  text-align: center;
+  letter-spacing: 0.03em;
+  color: var(--second-color);
+}
+
+.modal-block {
+  margin-bottom: 10px;
+}
+
+.modal-label {
+  display: inline-block;
+  margin-bottom: 4px;
+
+  font-size: 12px;
+  line-height: 1.16;
+  letter-spacing: 0.01em;
+}
+
+.modal-box {
+  position: relative;
+}
+
+.modal-input {
+  padding: 11px 35px;
+  width: 100%;
+
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+
+  transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-block:hover .modal-input {
+  border-color: var(--accent-color);
+}
+
+.modal-input:focus {
+  border: 1px solid var(--accent-color);
+  outline: var(--accent-color);
+}
+
+.modal-icon {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+
+  transform: translateY(-50%);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-block:hover .modal-icon,
+.modal-input:focus + .modal-icon {
+  fill: var(--accent-color);
+}
+
+.modal-comment-block {
+  margin-bottom: 20px;
+}
+
+.modal-comment {
+  width: 100%;
+  height: 120px;
+  padding: 12px 16px;
+  vertical-align: top;
+
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+
+  resize: none;
+  transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-comment-block:hover .modal-comment {
+  border-color: var(--accent-color);
+}
+
+.modal-comment:focus {
+  border: 1px solid var(--accent-color);
+  outline: var(--accent-color);
+}
+
+.modal-comment::placeholder {
+  font-size: 12px;
+  line-height: 1.16;
+  letter-spacing: 0.01em;
+  color: rgba(117, 117, 117, 0.5);
+}
+
+.modal-checkbox {
+  margin-bottom: 30px;
+}
+
+.checkbox-label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 14px;
+  line-height: normal;
+  letter-spacing: 0.03em;
+}
+
+.checkbox-icon-box {
+  position: relative;
+  width: 16px;
+  height: 15px;
+  margin-right: 7px;
+
+  border: 2px solid rgba(33, 33, 33, 1);
+  border-radius: 2px;
+
+  transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.checkbox:hover + .checkbox-icon-box,
+.checkbox:focus + .checkbox-icon-box {
+  border-color: var(--accent-color);
+}
+
+.checkbox:checked + .checkbox-icon-box {
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
+}
+
+.checkbox-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   fill: var(--light-text-color);
+}
+
+.checkbox-link {
+  margin-left: 5px;
+  color: var(--accent-color);
+}
+
+.modal-btn {
+  display: block;
+  margin: 0 auto;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width: 200px;
+
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.9;
+  text-align: center;
+  letter-spacing: 0.06em;
+
+  color: var(--light-text-color);
+  background-color: var(--accent-color);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-btn:hover,
+.modal-btn:focus {
+  background-color: #188ce8;
 }
 
 /* Cтили для portfolio.html */
